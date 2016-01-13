@@ -37,7 +37,7 @@ public class ServletContactUs extends HttpServlet {
 		out.print("email:" +email + "message: " + message);
 		
 		try	{
-			Connection dbConn = DbConnection.getConnection();
+			Connection dbConn = DbConnection.getConnection(email, message);
 		}	catch (Exception e)	{
 			throw new RuntimeException(e);
 		}

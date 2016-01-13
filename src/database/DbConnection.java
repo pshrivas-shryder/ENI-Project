@@ -2,11 +2,13 @@ package database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 
 
 public class DbConnection {
 	
-	public static Connection getConnection() throws Exception	{
+	public static Connection getConnection(String email, String message) throws Exception	{
+		Connection conn = null;
 		try	{
 			String driver = "com.mysql.jdbc.Driver";
 			String url = "jdbc:mysql://pshrivas-eni.cwgbkmxxzso1.ap-southeast-1.rds.amazonaws.com:3306/eni_support";
@@ -14,12 +16,22 @@ public class DbConnection {
 			String password = "password123";
 			
 			Class.forName(driver);
-			Connection conn = DriverManager.getConnection(url,username,password);
+			conn = DriverManager.getConnection(url,username,password);
 			
-			System.out.println("Connected");
+			String InsertStatement = "Insert into signup (eMail, message) VALUES ('" + email + "','" + message + "')";
+			
+			System.out.println(InsertStatement);
+			
+			PreparedStatement posted = conn.prepareStatement(InsertStatement);
+			
+			posted.executeUpdate();
+			
+			System.out.println("Inserted");
 			return conn;
 		} catch (Exception e)	{
 			throw new RuntimeException(e);
+		} finally {
+			conn.close();
 		}
 	}
 }
