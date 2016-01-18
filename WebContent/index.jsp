@@ -13,8 +13,6 @@
 	<input type = "submit" value = "send" />
 </form>
 
-<form action = "Twitter">
-	<input type = "submit" value = "send" />
-</form>
+
 </body>
 </html>

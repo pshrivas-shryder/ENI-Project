@@ -19,14 +19,5 @@
     <servlet-name>ServletContactUs</servlet-name>
     <url-pattern>/ServletContactUs</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>Twitter</display-name>
-    <servlet-name>Twitter</servlet-name>
-    <servlet-class>com.src.support.Twitter</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Twitter</servlet-name>
-    <url-pattern>/Twitter</url-pattern>
-  </servlet-mapping>
+ 
 </web-app>
