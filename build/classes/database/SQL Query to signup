@@ -1,7 +1,0 @@
-insert into signup (eMail, message) values ("ab@signup.com", "this is text");
-
-select * from signup;
-
-TRUNCATE table signup;
-
-delete from signup where signupID =4;
