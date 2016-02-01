@@ -1,0 +1,39 @@
+@CHARSET "ISO-8859-1";
+#circle {
+  background:#66FFFF;
+  border-radius: 50%;
+  border:1px solid blue;
+  height: 100px;
+  width: 100px;
+  margin: 100px;
+  position:absolute;
+ }
+#circle img{
+	position: absolute;
+    margin: 100px 0 0 100px;
+    top: -75px;
+    left:-75px;
+}
+
+#circle1 {
+  background: #66FFFF;
+  border-radius: 50%;
+  border:1px solid blue;
+  height: 100px;
+  width:100px;
+  margin: 100px;
+  transition: transform 1s;
+  transform:translateY(-80px)
+}
+ #circle:hover ~#circle1 {
+  transform: translate(0px,-100px);
+}
+#container{
+	position:absolute;
+	right:75px;
+	bottom:100px;
+}
+#imgs img{
+	height:150px;
+	width:auto;
+}

@@ -8,7 +8,10 @@ import java.io.IOException;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Properties;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 import javax.servlet.AsyncContext;
 import javax.servlet.RequestDispatcher;
@@ -32,6 +35,7 @@ import twitter4j.StallWarning;
 import twitter4j.Status;
 import twitter4j.StatusDeletionNotice;
 import twitter4j.StatusListener;
+import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 import twitter4j.TwitterStream;
@@ -47,137 +51,129 @@ import java.util.logging.Logger;
 //@WebServlet(value="/WhatToThink",asyncSupported = true,loadOnStartup = 1 )
 public class WhatToThink extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	 final static ArrayList<String> tw =  new ArrayList<String>();
+	// final ArrayList<String> tweetList =  new ArrayList<String>();
+	 ConcurrentLinkedQueue<String> tweetList= new ConcurrentLinkedQueue<String>();
+	 String token_access ="4742496138-p5i8hV1XdLsrgXuG1tYroXVHhzYJleG9hQqr08B";
+	 String token_secret ="cObxsYcOZCrR7YqGdGmRmG9BxeHg9X94Ly9IFJXXJZMXW";
+	 String consumer_key ="FZUl0OfzBpmE7O2lNEBTRHO5j";
+     String consumer_secret="tKqz3qATAJz7EGMAX2OHMDnG6M1MREnf3WG9tK6EcunF45yw6Y";
+      TwitterStream stream=null;
+      ConfigurationBuilder cb=null;
+      public void init() throws ServletException{
+    	  
+    	  if(cb==null){
+    	  cb = new ConfigurationBuilder();
+    	  
+          cb.setDebugEnabled(true);
+          cb.setOAuthConsumerKey(consumer_key);
+          cb.setOAuthConsumerSecret(consumer_secret);
+          cb.setOAuthAccessToken(token_access);
+          cb.setOAuthAccessTokenSecret(token_secret);
+          stream =    new TwitterStreamFactory(cb.build()).getInstance();
+          System.out.println("padma");
+          hello();
+    	  }
+         
+  		
+  		
+      }
     
 	protected void doGet(final HttpServletRequest request, final HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html"); 
+		PrintWriter out = response.getWriter();
 		
-		response.setContentType("text/html");
-
-	      
-	      final PrintWriter out = response.getWriter();
-		
-		
-		
-		final ArrayList<String> tweetList =  new ArrayList<String>();
-		final ArrayList<String> tw =  new ArrayList<String>();
-		
-        String token_access ="4742496138-p5i8hV1XdLsrgXuG1tYroXVHhzYJleG9hQqr08B";
-		String token_secret ="cObxsYcOZCrR7YqGdGmRmG9BxeHg9X94Ly9IFJXXJZMXW";
-		String consumer_key ="FZUl0OfzBpmE7O2lNEBTRHO5j";
-        String consumer_secret="tKqz3qATAJz7EGMAX2OHMDnG6M1MREnf3WG9tK6EcunF45yw6Y";
-		
-        ConfigurationBuilder cb = new ConfigurationBuilder();
-		                     cb.setDebugEnabled(true);
-		                     cb.setOAuthConsumerKey(consumer_key);
-		                     cb.setOAuthConsumerSecret(consumer_secret);
-		                     cb.setOAuthAccessToken(token_access);
-		                     cb.setOAuthAccessTokenSecret(token_secret);
-		                     
-	    TwitterStream stream =    new TwitterStreamFactory(cb.build()).getInstance();
-	    
-          
-		StatusListener listener = new StatusListener() {
-                 public void onStatus(Status status) {
-                	 
-		          tweetList.add(status.getText());
-		         
-					 
-  		    		
-		          ArrayList<String> tweets = tweetList;
-		         
-		          NLP.init();    
-		          	    		
-		          for(String tweet : tweets) {
-         	               	        		
-         		    	if(NLP.findSentiment(tweet)>2)	{ 
-         		    		tw.add(tweet); 
-         		    		
-         		    		System.out.println(tweet);
-         		    		
-						 		
-		          }
-		          } 
-		          
-		        
-		         
-		          
-		          
-		    }
-
-		                   public void onDeletionNotice(StatusDeletionNotice statusDeletionNotice) {
-		                       System.out.println("Got a status deletion notice id:" + statusDeletionNotice.getStatusId());
-		                   }
-
-		                   public void onTrackLimitationNotice(int numberOfLimitedStatuses) {
-		                       System.out.println("Got track limitation notice:" + numberOfLimitedStatuses);
-		                   }
-
-		                   public void onScrubGeo(long userId, long upToStatusId) {
-		                       System.out.println("Got scrub_geo event userId:" + userId + " upToStatusId:" + upToStatusId);
-		                   }
-
-		                   public void onException(Exception ex) {
-		                       ex.printStackTrace();
-		                   }
-
-		       			
-
-		       			@Override
-		       			public void onStallWarning(StallWarning warning) {
-		       				// TODO Auto-generated method stub
-		       				
-		       			}
-		               }; 
-		   
-		               FilterQuery qry = new FilterQuery();
-		               String[] key1 = { "@ENITalktous" };
-		               
-		             
-
-		               stream.addListener(listener);
-		               qry.track(key1);
-		               stream.filter(qry);
-		               
-		               
-		               try {
-		       			Thread.sleep(10000);
-		       		} catch (InterruptedException e1) {
-		       			
-		       			e1.printStackTrace();
-		       		}
-		              
-		               //out.println("<a href='signin.jsp'>visit</a>")
-		              
-   		    	/*	 request.setAttribute("org.apache.catalina.ASYNC_SUPPORTED", true);
-		               final AsyncContext asyncContext = request.startAsync();
-		               asyncContext.addListener(new AsyncListenerDemo());
-		               asyncContext.setTimeout(5000);
-		               asyncContext.start(new Runnable() {
-		            	   
-		                   @Override
-		                   public void run() {
-		                   	   // long-running task
-		                       try {
-		                  	HttpSession session=request.getSession(true);
-		      		            session.setAttribute("lis",tw);
-		      		          session.getAttribute("lis");   
-		                       asyncContext.dispatch("/signin.jsp");
-				            	//   request.setAttribute("lis", tw);
-		                           Thread.sleep(3000);
-		                       } catch (InterruptedException e) {
-		                       }
-		                    
-		                   }
-		               });*/
-		               
-		    		       
-		           }	
-		
+	   // List<String> tweets = tweetList;
+        NLP.init();    
+        HttpSession myses = request.getSession();
+        for(String tweet : tweetList) {
+	        	if(NLP.findSentiment(tweet)>2)	{ 
+	        		myses.setAttribute("lis",tweet);
+	        	}
+		    		 
+		  	 		
+        }
+		RequestDispatcher rd=request.getRequestDispatcher("/main.jsp");
+        rd.forward(request,response);
+        
 	  
-	    }
-       
+	  
+      
+		   }     
+	
+	
+	public void hello()
+	{  
+		    
+		StatusListener listener = new StatusListener() {
+            public void onStatus(Status status) {
+           	 
+	          tweetList.add(status.getText());
+	         
+    	        	  
+	         
+	          }
+
+			@Override
+			public void onException(Exception ex) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void onDeletionNotice(StatusDeletionNotice statusDeletionNotice) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void onTrackLimitationNotice(int numberOfLimitedStatuses) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void onScrubGeo(long userId, long upToStatusId) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void onStallWarning(StallWarning warning) {
+				// TODO Auto-generated method stub
+				
+			} 
+			
+
+
+	    };
+		
+
+	               FilterQuery qry = new FilterQuery();
+	               String[] key1 = { "@LEVIS","levis","Levi's" };
+	               
+	             
+
+	               stream.addListener(listener);
+	               qry.track(key1);
+	               stream.filter(qry);
+	               
+	               
+	               
+	               try {
+	       			Thread.sleep(1000);
+	       		} catch (InterruptedException e1) {
+	       			
+	       			e1.printStackTrace();
+	       		}
+				
+	              
+	}
+	
+}
 
 	
+       
 
             
             
