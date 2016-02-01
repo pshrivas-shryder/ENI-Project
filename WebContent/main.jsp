@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<meta http-equiv="refresh" content="60" />
+<meta http-equiv="refresh" content="100" />
 <title>Insert title here</title>
 <link rel="stylesheet" href="style.css" type="text/css"> 
 <link rel="stylesheet" href="eni.css" type="text/css"> 
@@ -47,11 +47,12 @@ setInterval(function(){
 </tr>
 </table>
 </td>
-</tr>
+</tr><tr><td>
+<div id=d5><img src="images/images.jpg" height="60" width="60"></div></td></tr>
 <tr><td id="imgs"></td></tr>
 <tr><td id="des"></td></tr>
 <tr>
-<td width="300%">
+<td width="100%">
 <div id ="display2" align="right" >
 <div id = d3 >
 <input type = "image" src="images/tweet.png" onClick="location.href='WhatToThink'">

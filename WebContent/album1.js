@@ -16,30 +16,7 @@ function album(){
 		          console.log("photo count"+len);
 		          var image;
 		          var descrp;
-		          descrp=response.albums.data[i].photos.data[j].name;
-		          document.getElementById('des').innerHTML=descrp;
-		          image= document.createElement('img');
-	              image.src= response.albums.data[i].photos.data[j].picture;
-	              document.getElementById('imgs').innerHTML='<img src="'+image.src+'">';
-	              var likes=response.albums.data[i].photos.data[j].likes.summary.total_count;
-		          document.getElementById('circle1').style.textAlign="center";
-	              document.getElementById('circle1').innerHTML="<br>"+"<br>"+likes+"Likes";
-	              console.log("comment count"+length);
-	              for(var k=0;k<length;k++){
-	            	  console.log("Comment count:"+length);
-	            	  var pro='/'+response.albums.data[i].photos.data[j].comments.data[k].from.id+'/picture';
-	               	  FB.api(pro,'GET',{"type":"small"},
-	            			  function(response) {
-	            			      var im=document.createElement('img');
-	            			      im.src=response.data.url;
-	            			      document.getElementById('circle2').innerHTML='<img src="'+im.src+'">';
-	            			  }
-	            			);
-	            	  var cmt=response.albums.data[i].photos.data[j].comments.data[k].message;
-	                  var name=response.albums.data[i].photos.data[j].comments.data[k].from.name;
-	                  document.getElementById('name').innerHTML=name+":";
-	                  document.getElementById('comment').innerHTML=cmt;}
-	              i=i-1;
+		          i=i-1;
 		          var interval=window.setInterval(function(){
 		        	  i++;
 	            	  len=response.albums.data[i].photos.data.length;
@@ -50,29 +27,22 @@ function album(){
 				      var interval1=window.setInterval(function(){
 				    	  console.log("J:"+j)
 				    	  
-				    	  descrp=response.albums.data[i].photos.data[j].name;
-		                  document.getElementById('des').innerHTML=descrp;
-					      image= document.createElement('img');
-			              image.src= response.albums.data[i].photos.data[j].picture;
+				    	  
 			             
 			              if(toggle){
+			            	  
+						      image= document.createElement('img');
+				              image.src= response.albums.data[i].photos.data[j].picture;
 			            	  document.getElementById('display2').style.visibility="hidden"; 
 			            	  document.getElementById('imgs').style.visibility="visible"; 
+			            	  document.getElementById('des').style.visibility="visible"; 
+			            	  document.getElementById('comment').style.visibility="visible"; 
+			            	  document.getElementById('name').style.visibility="visible"; 
+			            	  document.getElementById('circle2').style.visibility="visible"; 
+			            	  document.getElementById('d5').style.visibility="visible"; 
+			            	  descrp=response.albums.data[i].photos.data[j].name;
+			                  document.getElementById('des').innerHTML=descrp;
 			              document.getElementById('imgs').innerHTML='<img src="'+image.src+'">';
-			              toggle = false;
-			             }
-			              
-			              
-			              else{
-					     // alert("came here");
-					      document.getElementById('imgs').style.visibility="hidden";
-					      document.getElementById('display2').style.visibility="visible";
-					     // mydis();
-					      toggle=true;
-					      
-			              }
-					      
-			              
 			              likes=response.albums.data[i].photos.data[j].likes.summary.total_count;
 			              document.getElementById('circle1').style.textAlign="center";
 		                  document.getElementById('circle1').innerHTML="<br>"+"<br>"+likes+"Likes";
@@ -98,10 +68,30 @@ function album(){
 		                  j++;
 				      count++;
 				      
+			              toggle = false;
+			             }
+			              
+			              
+			              else{
+					     // alert("came here");
+					      document.getElementById('imgs').style.visibility="hidden";
+					      document.getElementById('des').style.visibility="hidden"; 
+		            	  document.getElementById('comment').style.visibility="hidden"; 
+		            	  document.getElementById('name').style.visibility="hidden"; 
+		            	  document.getElementById('d5').style.visibility="hidden"; 
+		            	  document.getElementById('circle2').style.visibility="hidden"; 
+					      document.getElementById('display2').style.visibility="visible";
+					     // mydis();
+					      toggle=true;
+					      
+			              }
+					      
+			              
+			             
 				     
 				      if(count==len){
 				    	  window.clearInterval(interval1);}
-	              },1000);
+	              },3000);
 				      
 				     
 				      calls--;
