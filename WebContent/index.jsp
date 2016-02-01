@@ -13,6 +13,14 @@
 	<input type = "submit" value = "send" />
 </form>
 
+<form action = "ServletForImage">
+	
+	<input type = "submit" value = "send" />
+</form>
+
+<form action ="ServletForImageRet">
+<input type = "submit" value = "send" />
+</form>
 
 </body>
 </html>

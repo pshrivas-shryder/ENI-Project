@@ -21,21 +21,21 @@
  
  <div class="item active">
 
-<img src="C:\ENILytics\images\18.jpg" alt="Shirt" class="img-responsive"/>
+<img src="C:\images\18.jpg" alt="Shirt" class="img-responsive"/>
 <div class="carousel-caption">
 
 </div>
 </div> 
 <div class="item">
 
-<img src="C:\ENILytics\images\17.jpg" alt="Blue" class="img-responsive"/>
+<img src="C:\images\17.jpg" alt="Blue" class="img-responsive"/>
 <div class="carousel-caption">
 
 </div>
 </div>
 <div class="item">
 
-<img src="C:\ENILytics\images\20.jpg" alt="Shoe" class="img-responsive"/>
+<img src="C:\images\20.jpg" alt="Shoe" class="img-responsive"/>
 <div class="carousel-caption">
 
 </div>

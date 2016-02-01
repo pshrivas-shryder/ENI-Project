@@ -8,6 +8,7 @@
     <welcome-file>default.html</welcome-file>
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
+    <welcome-file>finalcarousal.html</welcome-file>
   </welcome-file-list>
   <servlet>
     <description></description>
@@ -19,5 +20,34 @@
     <servlet-name>ServletContactUs</servlet-name>
     <url-pattern>/ServletContactUs</url-pattern>
   </servlet-mapping>
- 
+  <servlet>
+    <description></description>
+    <display-name>ServletForImage</display-name>
+    <servlet-name>ServletForImage</servlet-name>
+    <servlet-class>com.src.support.ServletForImage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletForImage</servlet-name>
+    <url-pattern>/ServletForImage</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServerForImageRet</display-name>
+    <servlet-name>ServerForImageRet</servlet-name>
+    <servlet-class>com.src.support.ServerForImageRet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServerForImageRet</servlet-name>
+    <url-pattern>/ServerForImageRet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>New1</display-name>
+    <servlet-name>New1</servlet-name>
+    <servlet-class>com.src.support.New1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>New1</servlet-name>
+    <url-pattern>/New1</url-pattern>
+  </servlet-mapping>
 </web-app>
