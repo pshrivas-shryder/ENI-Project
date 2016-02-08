@@ -15,7 +15,7 @@ a{
 	clear:both;
 }
 h1, h5{
-	margin:15px;
+	margin:0px;
 	font-size:44px;
 	color:#000;
 	font-family: 'Lato', sans-serif;
@@ -27,7 +27,7 @@ h1 span, h5{
 	display:block;
 	color:#60817a;
 }
-/* Header Style */
+/* Header Style
 .header{
 	height:25px;
 	line-height:24px;
@@ -53,4 +53,4 @@ h1 span, h5{
 .header span.right_ab{
 	position:absolute;
 	right:20px;
-}
+}*/

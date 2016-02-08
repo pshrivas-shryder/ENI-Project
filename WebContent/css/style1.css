@@ -1,19 +1,23 @@
 /* Circular Content Carousel Style */
 .ca-container{
-	position:relative;
+	position:absolute;
 	margin:25px auto 20px auto;
-	width:990px;
+	width:800px;
 	height:300px;
+	right:180px;
+	top:350px;
+	
+	
 }
 .ca-wrapper{
-	width:100%;
-	height:100%;
+	width:800px;
+	height:150px;
 	position:relative;
 }
 .ca-item{
 	position:relative;
 	float:left;
-	width:330px;
+	width:270px;
 	height:100%;
 	text-align:center;
 }
@@ -65,28 +69,28 @@
 	height:250px;
 	position:relative;
 	margin:0 auto;
-	background:transparent url(../retrieve.jsp) no-repeat center center;
+	background:transparent url(/ENI/Imagedb?cid=21) no-repeat center center;
 }
 .ca-item-2 .ca-icon{
-	background-image:url(../retrieve.jsp);
+	background-image:url(/ENI/Imagedb?cid=22);
 }
 .ca-item-3 .ca-icon{
-	background-image:url(../retrieve.jsp);
+	background-image:url(/ENI/Imagedb?cid=23);
 }
 .ca-item-4 .ca-icon{
-	background-image:url(../retrieve.jsp);
+	background-image:url(/ENI/Imagedb?cid=24);
 }
 .ca-item-5 .ca-icon{
-	background-image:url(../retrieve.jsp);
+	background-image:url(/ENI/Imagedb?cid=25);
 }
 .ca-item-6 .ca-icon{
-	background-image:url(../retrieve.jsp);
+	background-image:url(/ENI/Imagedb?cid=26);
 }
 .ca-item-7 .ca-icon{
-	background-image:url(../retrieve.jsp);
+	background-image:url(/ENI/Imagedb?cid=27);
 }
 .ca-item-8 .ca-icon{
-	background-image:url(../retrieve.jsp);
+	background-image:url(/ENI/Imagedb?cid=28);
 }
 .ca-item h3{
 	font-family: 'Coustard', sans-serif;
@@ -132,7 +136,7 @@
 	overflow:hidden;
 }
 .ca-content{
-	width:660px;
+	width:900px;
 	overflow:hidden;
 }
 .ca-content-text{
@@ -182,7 +186,7 @@
 	height:38px;
 	background:transparent url(../images/arrows.png) no-repeat top left;
 	position:absolute;
-	top:50%;
+	top:75px;
 	margin-top:-19px;
 	left:-40px;
 	text-indent:-9000px;
