@@ -1,0 +1,17 @@
+@CHARSET "ISO-8859-1";
+#car1{
+	position:absolute;
+	top:0px;
+	right:10px;
+	height:50%;
+	
+	}
+#car2
+{
+	position:relative;
+	top:300px;
+	right:10px;
+	width:auto;
+	height:10%;
+
+}

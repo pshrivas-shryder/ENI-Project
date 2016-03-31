@@ -38,6 +38,7 @@ window.fbAsyncInit = function() {
 		  if(response.status==='connected'){
 			  document.getElementById('status').innerHTML='connected';
 			  refresh();
+			  hideshow()
 			  }
 		  else if(response.status==='not_authorized'){
 			  document.getElementById('status').innerHTML='not connected';}
@@ -52,5 +53,6 @@ window.fbAsyncInit = function() {
   }
   function hideshow(){
 	  document.getElementById('status').style.visibility="hidden";
-	  document.getElementById('buttons').style.visibility="hidden";
+	  document.getElementById('button1').style.visibility="hidden";
+	  document.getElementById('button2').style.visibility="hidden";
 	  }

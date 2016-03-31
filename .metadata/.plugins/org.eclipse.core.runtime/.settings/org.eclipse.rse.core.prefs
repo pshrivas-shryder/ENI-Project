@@ -1,4 +1,7 @@
-activeuserprofiles=Admin-PC;Team
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=origin/master
+activeuserprofiles=Admin-PC;DESKTOP-ERTA4QT;Team
 eclipse.preferences.version=1
-org.eclipse.rse.systemtype.local.systemType.defaultUserId=Admin
-useridperkey=Admin-PC.Local\=Admin;
+org.eclipse.rse.systemtype.local.systemType.defaultUserId=Hp
+useridperkey=DESKTOP-ERTA4QT.Local\=Hp;Admin-PC.Local\=Hp;

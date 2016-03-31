@@ -53,3 +53,5 @@ target
 *.class
 *.class
 *.class
+*.jar
+WebContent/WEB-INF/lib/cos-05Nov2002.jar

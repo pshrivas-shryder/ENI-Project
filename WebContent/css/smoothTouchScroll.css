@@ -1,0 +1,22 @@
+/* You can alter this CSS in order to give Smooth Div Scroll your own look'n'feel */
+
+/* The scroll wrapper is always the same width and height as the containing element (div).
+   Overflow is hidden because you don't want to show all of the scrollable area.
+*/
+div.scrollWrapper
+{
+	position: relative;
+	right:0px;
+	overflow: hidden;
+	width: 800px;
+	height:auto;
+	
+}
+
+div.scrollableArea
+{
+	position: relative;
+	width: auto;
+	overflow: hidden;
+
+}

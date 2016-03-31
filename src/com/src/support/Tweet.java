@@ -1,49 +1,52 @@
 package com.src.support;
 
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.sql.*;
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+@SuppressWarnings("serial")
+public class Tweet extends HttpServlet{
+public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+PrintWriter pw = response.getWriter();
+int i = 0 ;
 
-/**
- * Servlet implementation class Tweet
- */
-public class Tweet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public Tweet() {
-        super();
-        
-    }
+Connection con=null;
+try{
+	 String driverName = "com.mysql.jdbc.Driver";
+	  String url = "jdbc:mysql://pshrivas-eni.cwgbkmxxzso1.ap-southeast-1.rds.amazonaws.com:3306/eni_support";
+	 // String dbName = "eni_support";
+	  String userName = "db_user";
+	     String password = "password123";
+	      
+	       Class.forName(driverName);
+	      con = DriverManager.getConnection(url,userName,password);
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+String filePath = "C:/Users/ramya/Downloads/images";
+File file = new File(filePath);
+String[] pathList = file.list();
+System.out.println(pathList.length);
+for(int j=1;j<=pathList.length;j++){
 	
-		/*PrintWriter pr = response.getWriter();
-		
-		
-		HttpSession session = request.getSession(false);
-	       session.getAttribute("lis");
-		
-		
-		
-		RequestDispatcher rd=getServletContext().getRequestDispatcher("/signin.jsp");
-         rd.forward(request,response);*/
-		
+	 String filepath =filePath+"/"+ pathList[j];
+	 System.out.println( filepath);
+	FileInputStream fs = new FileInputStream(filepath);
+	PreparedStatement ps = con.prepareStatement("INSERT INTO carou1 VALUES(?,?)");
+//ps.setInt(1,j);
+ps.setInt(1,j);
+ps.setBinaryStream(2,fs,fs.available());
 
-		
-	}
 
-	
+ i = ps.executeUpdate();}
 
-	
+if(i!=0){
+pw.println("image inserted successfully");
+}else{
+pw.println("problem in image insertion");
+} 
 
+} catch (Exception e){
+System.out.println(e);
+}
+}
 }

@@ -7,6 +7,7 @@
   width: 100px;
   margin: 100px;
   position:absolute;
+  left:250px;
  }
 #circle img{
 	position: absolute;
@@ -21,7 +22,9 @@
   border:1px solid blue;
   height: 100px;
   width:100px;
+  position:relative;
   margin: 100px;
+  left:240px;
   transition: transform 1s;
   transform:translateY(-80px)
 }
@@ -31,9 +34,45 @@
 #container{
 	position:absolute;
 	right:75px;
-	bottom:100px;
+	top:700px;
 }
 #imgs img{
 	height:150px;
 	width:auto;
+	height:100px;
+	
+}	
+table#table td{
+	height:30px;
 }
+#facebook{
+	table-layout: fixed;
+	width: 500px;
+	position:absolute;
+	left:150px; 
+	bottom:300px;
+}
+#tweet{
+	position:relative;
+	bottom:150px;
+}
+
+#tweet_img{
+	position:relative;
+	left:150px;
+	bottom:150px;
+}
+
+#marketting{
+	position:relative;
+	top:500px;
+	left:800px;
+	height:100px;
+}
+#content{
+	display:none;
+}
+body{
+	overflow:hidden;
+}
+

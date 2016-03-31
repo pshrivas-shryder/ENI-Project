@@ -16,6 +16,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import javax.servlet.AsyncContext;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -81,7 +82,8 @@ public class WhatToThink extends HttpServlet {
     
 	protected void doGet(final HttpServletRequest request, final HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html"); 
-		PrintWriter out = response.getWriter();
+		//PrintWriter out = response.getWriter();
+		
 		
 	   // List<String> tweets = tweetList;
         NLP.init();    
@@ -89,11 +91,14 @@ public class WhatToThink extends HttpServlet {
         for(String tweet : tweetList) {
 	        	if(NLP.findSentiment(tweet)>2)	{ 
 	        		myses.setAttribute("lis",tweet);
+	        		
 	        	}
 		    		 
 		  	 		
         }
-		RequestDispatcher rd=request.getRequestDispatcher("/main.jsp");
+       
+     
+		RequestDispatcher rd=request.getRequestDispatcher("/test.jsp");
         rd.forward(request,response);
         
 	  

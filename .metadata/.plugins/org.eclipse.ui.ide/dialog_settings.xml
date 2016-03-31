@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+<<<<<<< HEAD
 	<section name="ChooseWorkspaceDialogSettings">
 		<item value="185" key="DIALOG_Y_ORIGIN"/>
 		<item value="381" key="DIALOG_X_ORIGIN"/>
@@ -18,5 +19,10 @@
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>
 		</list>
+=======
+	<section name="ResourceNavigator">
+		<item value="Aggregate for window 1453104765456" key="ResourceWorkingSetFilter.STORE_WORKING_SET"/>
+		<item value="1" key="ResourceViewer.STORE_SORT_TYPE"/>
+>>>>>>> origin/master
 	</section>
 </section>

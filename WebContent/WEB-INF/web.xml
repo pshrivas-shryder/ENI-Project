@@ -8,13 +8,8 @@
     <welcome-file>default.html</welcome-file>
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
-     <welcome-file>signin.jsp</welcome-file>
-      <welcome-file>main.jsp</welcome-file>
-        <welcome-file>fbt.jsp</welcome-file>
-        
-         
+    <welcome-file>main.jsp</welcome-file>
   </welcome-file-list>
-  
   <servlet>
     <description></description>
     <display-name>ServletContactUs</display-name>
@@ -27,13 +22,33 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>Twitter</display-name>
-    <servlet-name>Twitter</servlet-name>
-    <servlet-class>com.src.support.Twitter</servlet-class>
+    <display-name>ServletForImage</display-name>
+    <servlet-name>ServletForImage</servlet-name>
+    <servlet-class>com.src.support.ServletForImage</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Twitter</servlet-name>
-    <url-pattern>/Twitter</url-pattern>
+    <servlet-name>ServletForImage</servlet-name>
+    <url-pattern>/ServletForImage</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServerForImageRet</display-name>
+    <servlet-name>ServerForImageRet</servlet-name>
+    <servlet-class>com.src.support.ServerForImageRet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServerForImageRet</servlet-name>
+    <url-pattern>/ServerForImageRet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>New1</display-name>
+    <servlet-name>New1</servlet-name>
+    <servlet-class>com.src.support.New1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>New1</servlet-name>
+    <url-pattern>/New1</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -45,7 +60,6 @@
     <servlet-name>Tweet</servlet-name>
     <url-pattern>/Tweet</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>WhatToThink</display-name>
@@ -53,7 +67,6 @@
     <servlet-class>com.src.support.WhatToThink</servlet-class>
   </servlet>
   <servlet-mapping>
-  
     <servlet-name>WhatToThink</servlet-name>
     <url-pattern>/WhatToThink</url-pattern>
   </servlet-mapping>
@@ -63,9 +76,128 @@
     <servlet-name>Sample</servlet-name>
     <servlet-class>com.src.support.Sample</servlet-class>
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>Sample</servlet-name>
     <url-pattern>/Sample</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ImageCar</display-name>
+    <servlet-name>ImageCar</servlet-name>
+    <servlet-class>com.src.support.ImageCar</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ImageCar</servlet-name>
+    <url-pattern>/ImageCar</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Imagedb</display-name>
+    <servlet-name>Imagedb</servlet-name>
+    <servlet-class>com.src.support.Imagedb</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Imagedb</servlet-name>
+    <url-pattern>/Imagedb</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetImage</display-name>
+    <servlet-name>GetImage</servlet-name>
+    <servlet-class>com.src.support.GetImage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetImage</servlet-name>
+    <url-pattern>/GetImage</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetImg</display-name>
+    <servlet-name>GetImg</servlet-name>
+    <servlet-class>com.src.support.GetImage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetImg</servlet-name>
+    <url-pattern>/GetImg</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RetImg</display-name>
+    <servlet-name>RetImg</servlet-name>
+    <servlet-class>com.src.support.RetImg</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RetImg</servlet-name>
+    <url-pattern>/RetImg</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Gimage</display-name>
+    <servlet-name>Gimage</servlet-name>
+    <servlet-class>com.src.support.Gimage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Gimage</servlet-name>
+    <url-pattern>/Gimage</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Rimage</display-name>
+    <servlet-name>Rimage</servlet-name>
+    <servlet-class>com.src.support.Rimage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Rimage</servlet-name>
+    <url-pattern>/Rimage</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Rimage1</display-name>
+    <servlet-name>Rimage1</servlet-name>
+    <servlet-class>com.src.support.Rimage1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Rimage1</servlet-name>
+    <url-pattern>/Rimage1</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Imagedb1</display-name>
+    <servlet-name>Imagedb1</servlet-name>
+    <servlet-class>com.src.support.Imagedb1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Imagedb1</servlet-name>
+    <url-pattern>/Imagedb1</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ajaxservlet</display-name>
+    <servlet-name>ajaxservlet</servlet-name>
+    <servlet-class>com.src.support.ajaxservlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ajaxservlet</servlet-name>
+    <url-pattern>/ajaxservlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Sampleimage1</display-name>
+    <servlet-name>Sampleimage1</servlet-name>
+    <servlet-class>com.src.support.Sampleimage1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Sampleimage1</servlet-name>
+    <url-pattern>/Sampleimage1</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>TwitterFeed</display-name>
+    <servlet-name>TwitterFeed</servlet-name>
+    <servlet-class>com.src.support.TwitterFeed</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TwitterFeed</servlet-name>
+    <url-pattern>/TwitterFeed</url-pattern>
   </servlet-mapping>
 </web-app>
