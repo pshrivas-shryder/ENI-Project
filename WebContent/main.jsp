@@ -51,8 +51,8 @@ $(document).ready(function() {
 <div id="button1"><button id="login" onclick="login()">Login</button></div></td>
 <td><div id="button2"><button id="logout" onclick="logout()">Logout</button></div></td><td>
 </td>
-<td id="carousal">
-<div >
+<td >
+<div id="carousal">
 <%@ include file="testdrive.jsp" %></div></td></tr></table>
 <div id="circle"><img src="images/fb.png"  style="background-color:#66FFFF"></div>
 <div id="circle1" style="font-family: 'Lato', sans-serif;color: #5a5a5a;"></div>
@@ -66,7 +66,7 @@ $(document).ready(function() {
 <table style="border-color:red;">
 <tr>
 <td id="cf" align="left" width="100px"><img class="top"src="images/fbicon.png" height="60px" width="60px" /></td>
-<td id="circle2"align="left"><div   ></div></td>
+<td id="circle2"align="left"><div></div></td>
 <td id="name" width="150px"align="center" style="font-family: 'Lato', sans-serif;color: #5a5a5a;" >
 </td>
 <td id="comment" width="80%" align="center" style="font-family: 'Lato', sans-serif;color: #5a5a5a;"></td>

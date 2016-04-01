@@ -19,6 +19,7 @@
     {
     position:relative;
     left:780px;
+    bottom:300px;
     width:100%;
     height:auto;
     }
@@ -35,6 +36,7 @@
 	
 	
 }
+
 		</style>
 		
 	   
