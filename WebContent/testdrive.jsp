@@ -29,8 +29,9 @@
 	position: relative;
 	float: left;
 	padding: 0;
-	margin: 0px 0px;
+	margin: 0px 5px;
 	width:60px;
+	
 	/*height:20%;*/
 	
 	
@@ -77,14 +78,12 @@
 <script type="text/javascript">
 
   $(function() {
-    // Create a rondell with the 'carousel' preset and set an option
-    // to disable the rondell while the lightbox is displayed
+   
     $("#rondellCarousel").rondell({
       preset: "carousel",
       
       onAfterShift:function(idx){
-    	 // alert(idx);
-    	 //$('#TouchScroller div').empty();
+    	
     	  itemLoadCallback: trigger(idx)
     	
       }
@@ -105,15 +104,15 @@
 	    			 $.each(item,function(i,obj){
 	    				 var img = $('<img class="dynamic">'); //Equivalent: $(document.createElement('img'))
 	    				 img.attr('src','data:image/jpg;base64,' +obj.map.key );
-	    				 img.appendTo('.scrollableArea').hide().fadeIn(1000);
-	    				 var d=$('<div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoqsapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc</div>');
+	    				 img.appendTo('.scrollableArea').after("").hide().fadeIn(1000);
+	    				/* var d=$('<div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoqsapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc</div>');
 	    				 $('.dynamic ').on('click',function(){
 	    					$('#container').hide();
 	    				   d.appendTo('#TouchScroller').hide().fadeIn(1000);
-	    				 });
-	    				 setInterval(function(){d.remove();$('#container').show();},5000);
+	    				 });*/
+	    				// setInterval(function(){d.remove();$('#container').show();},5000);
 	    				    				 
-	              // $('.scrollableArea').append('<img src="data:image/jpg;base64,' +obj.map.key+'" />');
+	            
 	                
 	    		 });
 	          });

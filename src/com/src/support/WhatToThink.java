@@ -1,51 +1,25 @@
 package com.src.support;
 
 import java.io.IOException;
-
-
-
-
-
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Properties;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
-import javax.servlet.AsyncContext;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import edu.stanford.nlp.ling.CoreAnnotations;
-import edu.stanford.nlp.neural.rnn.RNNCoreAnnotations;
-import edu.stanford.nlp.pipeline.Annotation;
-import edu.stanford.nlp.pipeline.StanfordCoreNLP;
-import edu.stanford.nlp.sentiment.SentimentCoreAnnotations;
-import edu.stanford.nlp.*;
-import edu.stanford.nlp.trees.Tree;
-import edu.stanford.nlp.util.CoreMap;
 import twitter4j.FilterQuery;
 import twitter4j.StallWarning;
 import twitter4j.Status;
 import twitter4j.StatusDeletionNotice;
 import twitter4j.StatusListener;
-import twitter4j.Twitter;
-import twitter4j.TwitterException;
-import twitter4j.TwitterFactory;
 import twitter4j.TwitterStream;
 import twitter4j.TwitterStreamFactory;
-import twitter4j.auth.RequestToken;
 import twitter4j.conf.ConfigurationBuilder;
 import com.src.support.NLP;
-import javax.servlet.AsyncListener;
-import java.util.logging.Logger;
 
 
 
@@ -71,7 +45,7 @@ public class WhatToThink extends HttpServlet {
           cb.setOAuthConsumerSecret(consumer_secret);
           cb.setOAuthAccessToken(token_access);
           cb.setOAuthAccessTokenSecret(token_secret);
-          stream =    new TwitterStreamFactory(cb.build()).getInstance();
+          stream = new TwitterStreamFactory(cb.build()).getInstance();
           System.out.println("padma");
           hello();
     	  }
@@ -81,26 +55,40 @@ public class WhatToThink extends HttpServlet {
       }
     
 	protected void doGet(final HttpServletRequest request, final HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html"); 
+		response.setContentType("text/html;charset=UTF-8");
+		response.setHeader("Access-Control-Allow-Origin", "*");
 		//PrintWriter out = response.getWriter();
-		
-		
+		 PrintWriter o; 
+		 o = response.getWriter();
+		int i=0;
+		String twee = null;
+		System.out.println("doGet");
 	   // List<String> tweets = tweetList;
         NLP.init();    
         HttpSession myses = request.getSession();
         for(String tweet : tweetList) {
-	        	if(NLP.findSentiment(tweet)>2)	{ 
+        	System.out.println("i"+i);
+	        	if(NLP.findSentiment(tweet)>1)	{ 
+	        		System.out.println("if");
+	        		twee=tweet;
 	        		myses.setAttribute("lis",tweet);
+	        		System.out.println(twee);
+	        		//return;
+	        		//
+	        		
 	        		
 	        	}
 		    		 
-		  	 		
+		  	i++; 		
         }
+         //myses.setAttribute("lis",twee);
+       o.print(twee);
+         o.flush();
        
+      
+		//RequestDispatcher rd=request.getRequestDispatcher("/main.jsp");
+        //rd.forward(request,response);
      
-		RequestDispatcher rd=request.getRequestDispatcher("/test.jsp");
-        rd.forward(request,response);
-        
 	  
 	  
       

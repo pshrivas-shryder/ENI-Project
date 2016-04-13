@@ -22,6 +22,16 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+    <display-name>NLP</display-name>
+    <servlet-name>NLP</servlet-name>
+    <servlet-class>com.src.support.NLP</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NLP</servlet-name>
+    <url-pattern>/NLP</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
     <display-name>ServletForImage</display-name>
     <servlet-name>ServletForImage</servlet-name>
     <servlet-class>com.src.support.ServletForImage</servlet-class>

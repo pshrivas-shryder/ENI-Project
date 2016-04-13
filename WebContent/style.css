@@ -7,8 +7,8 @@
   width: 100px;
   margin: 100px;
   position:absolute;
-  top:105px;
-  left:250px;
+  top:200px;
+  left:350px;
  }
 #circle img{
 	position: absolute;
@@ -23,14 +23,14 @@
   border:1px solid blue;
   height: 100px;
   width:100px;
-  position:relative;
-  bottom:330px;
   margin: 100px;
-  left:240px;
   transition: transform 1s;
-  transform:translateY(-80px)
+  transform:translateY(-80px);
+  position:absolute;
+  top:200px;
+  left:350px;
 }
- #circle:hover ~#circle1 {
+ #circle:active ~#circle1 {
   transform: translate(0px,-100px);
 }
 #container{
@@ -74,4 +74,14 @@ table#table td{
 #content{
 	display:none;
 }
-
+body{
+	overflow:hidden;
+}
+#libtn{
+	position:relative;
+	bottom:30px;
+}
+#likes{
+	position:relative;
+	bottom:30px;
+}

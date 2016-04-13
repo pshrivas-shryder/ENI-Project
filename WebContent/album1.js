@@ -4,33 +4,27 @@
 
 
 function album(){
-	    var toggle =true;
+
+	  
 	FB.api(
 			  '/790876601057998','GET',{"fields":"albums{photos{picture,likes.summary(1).limit(0),comments.summary(1){from,message},name,created_time}}"},
 			  function(response) {
 				  var posts=response.albums.data.length;	  
 			      var calls=posts;
-			      var i=0;
-				  var l=response.albums.data[i].photos.data.length*2*2000;
+			       i=0;
+				  var l=response.albums.data[i].photos.data.length*5000;
 		          var image;
 		          var ima=[];
 		           j=0;
-                  //m=0;
                  count=0;
-		          i=i-1;
-		         // l=l-1;
-		         // var interval=window.setInterval(function(){
-		          function loop(){
-		        	//console.log("l"+l);
-		        	  //i++;
-		        	  if(posts!=i){
-		        		 
-		        	    	  i++;
-		        	  len=response.albums.data[i].photos.data.length;
-	                  console.log("photos count:"+len);
-	                  console.log("i:"+i);
-	                  
-				      var interval1=window.setInterval(function(){
+                 var myVar;
+                 window.clearTimeout(myVar);
+		         function loop(){
+		         ( function next(i)	{console.log(i);
+		         	  len=response.albums.data[i].photos.data.length;
+	                  console.log("photos count:"+len);                
+				       interval1=window.setInterval(function(){
+				    	
 				    	  $('#cf').hide();
 				    	  $('#libtn').hide();
 				    	  console.log("j:"+j)
@@ -77,35 +71,45 @@ function album(){
 		                     $('#libtn').hide().fadeIn(1000);
 		                     
 		                    j++;
-		                   // m++;
+		                  
 				            count++;
 				            console.log("count"+count+"len"+len);
-				           // alert("came here");
-					     // mydis();
-					      if(count==len){
+				          if(count==len){
 				    		 console.log("set interval");
 				    		 j=0;
 				    		 count=0;
-			        		 window.clearInterval(interval1);
+				    		window.clearInterval(interval1);
+				    		 
 			        		 }
-				    	 
-	              },5000);				     
+					     // interval1=window.setTimeout(loop1,5000);
+	              },5000);		
+				    
 				      calls--;
                       /*if(calls==0){
                     	  console.log("set interval1");
         	               window.clearInterval(interval); 
         	               }*/
-                      l=response.albums.data[i].photos.data.length*5000;
-                      window.setTimeout(loop, l)
-		             }//,60000);
+				      j=0;
+			          count=0;
+			          //loop1();
+                      l=(response.albums.data[i].photos.data.length)*5000;
+                      //console.log("l:"+l);
+                      //window.setTimeout(loop,l);
+                      myVar=window.setTimeout(function(){if(i!=posts){i++;next(i);}},l);
+		        	  //}
+		        	
+		        	})(i);
+		          
 		          }
 		          if(calls!=0){
-		          loop();}
+		          console.log("here");
+		          loop();
+		          }
+		      	setTimeout(function(){ window.clearInterval(interval1);window.clearTimeout(myVar);status();},60000);
+		         
 			  });
 	     
-	      var set=window.setInterval(function(){
-	    	    
-	      document.getElementById('display2').style.visibility="visible";},6000);
+	
 	      
 }
 

@@ -62,6 +62,7 @@ public class imgtable {
 			String password = "password123";
 			
 			Class.forName(driver);
+			@SuppressWarnings("unused")
 			Connection conn = DriverManager.getConnection(url,username,password);
 			System.out.println("Connected");
 			

@@ -10,7 +10,6 @@ import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.sentiment.SentimentCoreAnnotations;
 import edu.stanford.nlp.trees.Tree;
 import edu.stanford.nlp.util.CoreMap;
-import twitter4j.*;
 
 public class NLP {
 	static StanfordCoreNLP pipeline;
@@ -25,7 +24,7 @@ public class NLP {
        
         public static int findSentiment(String tweet) {
         int mainSentiment = 0;
-        int mainSenti=0;
+       // int mainSenti=0;
         if (tweet != null && ((CharSequence) tweet).length() > 0) {
             int longest = 0;
             Annotation annotation = pipeline.process(tweet);
