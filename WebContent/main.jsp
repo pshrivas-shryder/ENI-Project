@@ -10,7 +10,35 @@
 <script src="http://summerofgoto.com/js/parseScripts.js"></script>
 <script src="http://summerofgoto.com/js/goto.min.js"></script>
 <script type="text/javascript" src="libs/jquery-1.10.2.min.js"></script>
-
+<script>
+ var i = 0;
+ var id=0;
+ function buttonClick() {
+ i++;
+ document.getElementById('circle1').innerHTML = i;
+ var date=01-04-2016;
+ var date1=new Date();
+ if(date==date1.toLocaleDateString)
+ {
+	 id=0;
+	 
+ }
+ else
+	 {
+	 id++;
+	 
+	 }
+ $.ajax({
+     type : "GET",
+     url : "likesservlet",
+     data:{id:id,wow:i},
+     success : function(data) {
+    	 
+     }
+     });
+ }
+ 
+ </script>
 <script>
 
 $(document).ready(function() {
@@ -36,14 +64,14 @@ $(document).ready(function() {
    	      success : function(data) {
    	    	 
    	    	 $("#myList").html(data);
-   	    	 $("#tweet_img").hide().fadeIn(1000);
-   	    	 $("#myList").hide().fadeIn(1000);
-   	    }
-    	 });
-     
-    }, 60000);
-  
-});
+   	    	 $("#tweet_img").hide().fadeIn(1000)	;
+			 $("#myList").hide().fadeIn(1000);
+				}
+			});
+
+		}, 10000);
+
+	});
 </script>
 
 </head>
@@ -61,7 +89,7 @@ $(document).ready(function() {
 <div id="carousal">
 <%@ include file="testdrive.jsp" %></div></td>
 </tr></table>
-<div id="circle"><img src="images/fb.png"  style="background-color:#66FFFF"></div>
+<div id="circle"><img src="images/fb.png"  onClick="buttonClick()" alt="Like" style="background-color:#66FFFF"></div>
 <div id="circle1" style="font-family: 'Lato', sans-serif;color: #5a5a5a;"></div>
 <div id="container" align="center">
 

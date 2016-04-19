@@ -4,7 +4,7 @@
 
 
 function album(){
-
+   var toggle=true;
 	  
 	FB.api(
 			  '/790876601057998','GET',{"fields":"albums{photos{picture,likes.summary(1).limit(0),comments.summary(1){from,message},name,created_time}}"},
@@ -20,12 +20,14 @@ function album(){
                  var myVar;
                  window.clearTimeout(myVar);
 		         function loop(){
-		         ( function next(i)	{console.log(i);
+		        
+		         ( function next(i)	{
+		        	
+		        	 console.log(i);
 		         	  len=response.albums.data[i].photos.data.length;
 	                  console.log("photos count:"+len);                
 				       interval1=window.setInterval(function(){
-				    	
-				    	  $('#cf').hide();
+							    	  $('#cf').hide();
 				    	  $('#libtn').hide();
 				    	  console.log("j:"+j)
 				    	  image= document.createElement('img');
@@ -61,7 +63,8 @@ function album(){
 		                     $('#name').hide();
 		                     document.getElementById('comment').innerHTML=cmt;
 		                     $('#comment').hide();
-		                                 }  
+		                     }  
+		                  
 		                     $('#cf').hide().fadeIn(1000);
 		                     $('#circle2').hide().fadeIn(1000);
 		                     $('#name').hide().fadeIn(1000);
@@ -69,11 +72,14 @@ function album(){
 		                     $('#imgs').hide().fadeIn(1000);
 		                     $('#likes').hide().fadeIn(1000);
 		                     $('#libtn').hide().fadeIn(1000);
-		                     
-		                    j++;
-		                  
-				            count++;
-				            console.log("count"+count+"len"+len);
+		                     /*$("#tweet_img").hide()	;
+		        			 $("#myList").hide();*/
+		        			
+		        			 j++;
+		        			 count++;
+		                
+				          
+				          console.log("count"+count+"len"+len);
 				          if(count==len){
 				    		 console.log("set interval");
 				    		 j=0;
@@ -81,6 +87,7 @@ function album(){
 				    		window.clearInterval(interval1);
 				    		 
 			        		 }
+				         
 					     // interval1=window.setTimeout(loop1,5000);
 	              },5000);		
 				    
@@ -101,11 +108,12 @@ function album(){
 		        	})(i);
 		          
 		          }
+		         
 		          if(calls!=0){
 		          console.log("here");
 		          loop();
 		          }
-		      	setTimeout(function(){ window.clearInterval(interval1);window.clearTimeout(myVar);status();},60000);
+		          setTimeout(function(){ window.clearInterval(interval1);window.clearTimeout(myVar);status();},60000);
 		         
 			  });
 	     

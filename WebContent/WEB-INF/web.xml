@@ -1,25 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
   <display-name>ENI</display-name>
+  <context-param>
+    <param-name>log4j-config-location</param-name>
+    <param-value>WEB-INF/log4j.properties</param-value>
+  </context-param>
+  <context-param>
+    <param-name>log4j1-config-location</param-name>
+    <param-value>WEB-INF/log4j1.properties</param-value>
+  </context-param>
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-    <welcome-file>main.jsp</welcome-file>
+        <welcome-file>main.jsp</welcome-file>
   </welcome-file-list>
-  <servlet>
-    <description></description>
-    <display-name>ServletContactUs</display-name>
-    <servlet-name>ServletContactUs</servlet-name>
-    <servlet-class>com.src.support.ServletContactUs</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ServletContactUs</servlet-name>
-    <url-pattern>/ServletContactUs</url-pattern>
-  </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>NLP</display-name>
@@ -32,43 +24,13 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>ServletForImage</display-name>
-    <servlet-name>ServletForImage</servlet-name>
-    <servlet-class>com.src.support.ServletForImage</servlet-class>
+    <display-name>Insertimagetodb</display-name>
+    <servlet-name>Insertimagetodb</servlet-name>
+    <servlet-class>com.src.support.Insertimagetodb</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ServletForImage</servlet-name>
-    <url-pattern>/ServletForImage</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>ServerForImageRet</display-name>
-    <servlet-name>ServerForImageRet</servlet-name>
-    <servlet-class>com.src.support.ServerForImageRet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ServerForImageRet</servlet-name>
-    <url-pattern>/ServerForImageRet</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>New1</display-name>
-    <servlet-name>New1</servlet-name>
-    <servlet-class>com.src.support.New1</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>New1</servlet-name>
-    <url-pattern>/New1</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>Tweet</display-name>
-    <servlet-name>Tweet</servlet-name>
-    <servlet-class>com.src.support.Tweet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Tweet</servlet-name>
-    <url-pattern>/Tweet</url-pattern>
+    <servlet-name>Insertimagetodb</servlet-name>
+    <url-pattern>/Insertimagetodb</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -82,26 +44,6 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>Sample</display-name>
-    <servlet-name>Sample</servlet-name>
-    <servlet-class>com.src.support.Sample</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Sample</servlet-name>
-    <url-pattern>/Sample</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>ImageCar</display-name>
-    <servlet-name>ImageCar</servlet-name>
-    <servlet-class>com.src.support.ImageCar</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ImageCar</servlet-name>
-    <url-pattern>/ImageCar</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
     <display-name>Imagedb</display-name>
     <servlet-name>Imagedb</servlet-name>
     <servlet-class>com.src.support.Imagedb</servlet-class>
@@ -109,66 +51,6 @@
   <servlet-mapping>
     <servlet-name>Imagedb</servlet-name>
     <url-pattern>/Imagedb</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>GetImage</display-name>
-    <servlet-name>GetImage</servlet-name>
-    <servlet-class>com.src.support.GetImage</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>GetImage</servlet-name>
-    <url-pattern>/GetImage</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>GetImg</display-name>
-    <servlet-name>GetImg</servlet-name>
-    <servlet-class>com.src.support.GetImage</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>GetImg</servlet-name>
-    <url-pattern>/GetImg</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>RetImg</display-name>
-    <servlet-name>RetImg</servlet-name>
-    <servlet-class>com.src.support.RetImg</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>RetImg</servlet-name>
-    <url-pattern>/RetImg</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>Gimage</display-name>
-    <servlet-name>Gimage</servlet-name>
-    <servlet-class>com.src.support.Gimage</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Gimage</servlet-name>
-    <url-pattern>/Gimage</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>Rimage</display-name>
-    <servlet-name>Rimage</servlet-name>
-    <servlet-class>com.src.support.Rimage</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Rimage</servlet-name>
-    <url-pattern>/Rimage</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>Rimage1</display-name>
-    <servlet-name>Rimage1</servlet-name>
-    <servlet-class>com.src.support.Rimage1</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Rimage1</servlet-name>
-    <url-pattern>/Rimage1</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -182,16 +64,6 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>ajaxservlet</display-name>
-    <servlet-name>ajaxservlet</servlet-name>
-    <servlet-class>com.src.support.ajaxservlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ajaxservlet</servlet-name>
-    <url-pattern>/ajaxservlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
     <display-name>Sampleimage1</display-name>
     <servlet-name>Sampleimage1</servlet-name>
     <servlet-class>com.src.support.Sampleimage1</servlet-class>
@@ -202,12 +74,68 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>TwitterFeed</display-name>
-    <servlet-name>TwitterFeed</servlet-name>
-    <servlet-class>com.src.support.TwitterFeed</servlet-class>
+    <display-name>LogDemo</display-name>
+    <servlet-name>LogDemo</servlet-name>
+    <servlet-class>com.src.support.LogDemo</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>TwitterFeed</servlet-name>
-    <url-pattern>/TwitterFeed</url-pattern>
+    <servlet-name>LogDemo</servlet-name>
+    <url-pattern>/LogDemo</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Log_click_count</display-name>
+    <servlet-name>Log_click_count</servlet-name>
+    <servlet-class>com.src.support.Log_click_count</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Log_click_count</servlet-name>
+    <url-pattern>/Log_click_count</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Log_click_count1</display-name>
+    <servlet-name>Log_click_count1</servlet-name>
+    <servlet-class>com.src.support.Log_click_count1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Log_click_count1</servlet-name>
+    <url-pattern>/Log_click_count1</url-pattern>
+  </servlet-mapping>
+  <listener>
+    <listener-class>com.src.support.ContextListener1</listener-class>
+  </listener>
+  <servlet>
+    <description></description>
+    <display-name>Log_swipe_count</display-name>
+    <servlet-name>Log_swipe_count</servlet-name>
+    <servlet-class>com.src.support.Log_swipe_count</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Log_swipe_count</servlet-name>
+    <url-pattern>/Log_swipe_count</url-pattern>
+  </servlet-mapping>
+  <listener>
+    <listener-class>com.src.support.ContextListener2</listener-class>
+  </listener>
+  <servlet>
+    <description></description>
+    <display-name>fbservlet</display-name>
+    <servlet-name>fbservlet</servlet-name>
+    <servlet-class>com.src.support.fbservlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>fbservlet</servlet-name>
+    <url-pattern>/fbservlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>likesservlet</display-name>
+    <servlet-name>likesservlet</servlet-name>
+    <servlet-class>com.src.support.likesservlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>likesservlet</servlet-name>
+    <url-pattern>/likesservlet</url-pattern>
   </servlet-mapping>
 </web-app>

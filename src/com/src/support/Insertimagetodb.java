@@ -6,7 +6,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 
 @SuppressWarnings("serial")
-public class Tweet extends HttpServlet{
+public class Insertimagetodb extends HttpServlet{
 public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 PrintWriter pw = response.getWriter();
 int i = 0 ;

@@ -10,9 +10,18 @@
 #car2
 {
 	position:relative;
-	top:260px;
+	top:220px;
 	right:30px;
 	width:auto;
 	height:10%;
 
+}
+#heart{
+	position:relative;
+	left:1050px;
+	bottom:50px;
+}
+#heart img{
+	height:50px;
+	width:50px;
 }
